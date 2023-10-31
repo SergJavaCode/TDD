@@ -2,10 +2,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.sergjavacode.PhoneBook;
+import ru.sergjavacode.PhoneBookEntry;
 
 public class PhoneBookTest {
     static PhoneBook phoneBook = new PhoneBook();
-
 
     @BeforeAll
     public static void beforeAll() {
@@ -13,6 +13,7 @@ public class PhoneBookTest {
         Assertions.assertEquals(2, phoneBook.add("Юля", "56-78-99"));
         Assertions.assertEquals(3, phoneBook.add("Катя", "26-29-26"));
     }
+
 
     @Test
     public void addTest() {
@@ -34,4 +35,9 @@ public class PhoneBookTest {
         Assertions.assertTrue("26-29-26".equals(phoneBook.findByName("Катя")));
         Assertions.assertTrue("26-25-26".equals(phoneBook.findByName("Коля")));
     }
+    @Test
+    public void printAllNamesTest(){
+        phoneBook.printAllNames().stream().forEach(System.out::println);
+    }
+
 }
