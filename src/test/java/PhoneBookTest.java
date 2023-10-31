@@ -11,27 +11,27 @@ public class PhoneBookTest {
     public static void beforeAll() {
         Assertions.assertEquals(1, phoneBook.add("Коля", "26-25-26"));
         Assertions.assertEquals(2, phoneBook.add("Юля", "56-78-99"));
-        Assertions.assertEquals(3, phoneBook.add("Коля", "26-29-26"));
+        Assertions.assertEquals(3, phoneBook.add("Катя", "26-29-26"));
     }
 
     @Test
     public void addTest() {
         Assertions.assertEquals(4, phoneBook.add("Толя", "56-98-26"));
         Assertions.assertEquals(5, phoneBook.add("Таня", "98-77-39"));
-        Assertions.assertEquals(6, phoneBook.add("Толя", "55-25-32"));
+        Assertions.assertEquals(6, phoneBook.add("Тоня", "55-25-32"));
     }
 
     @Test
     public void findByNumberTest() {
         Assertions.assertTrue("Юля".equals(phoneBook.findByNumber("56-78-99")));
-        Assertions.assertTrue("Коля".equals(phoneBook.findByNumber("26-29-26")));
+        Assertions.assertTrue("Катя".equals(phoneBook.findByNumber("26-29-26")));
         Assertions.assertTrue("Коля".equals(phoneBook.findByNumber("26-25-26")));
     }
 
     @Test
     public void findByNameTest(){
         Assertions.assertTrue("56-78-99".equals(phoneBook.findByName("Юля")));
-        Assertions.assertTrue("26-29-26".equals(phoneBook.findByName("Коля")));
+        Assertions.assertTrue("26-29-26".equals(phoneBook.findByName("Катя")));
         Assertions.assertTrue("26-25-26".equals(phoneBook.findByName("Коля")));
     }
 }
