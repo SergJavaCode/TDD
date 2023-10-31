@@ -2,6 +2,15 @@ package ru.sergjavacode;
 
 class PhoneBookEntry implements Comparable{
     private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     private String phoneNumber;
 
     PhoneBookEntry(String name, String phoneNumber){
@@ -14,4 +23,5 @@ class PhoneBookEntry implements Comparable{
         PhoneBookEntry compareObject = (PhoneBookEntry) o;
         return this.name.compareTo(compareObject.name);
     }
+
 }
