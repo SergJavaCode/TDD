@@ -1,8 +1,10 @@
 package ru.sergjavacode;
 
-class PhoneBookEntry implements Comparable{
-    private String name;
+import java.util.Objects;
 
+class PhoneBookEntry {
+    private String name;
+    private String phoneNumber;
     public String getName() {
         return name;
     }
@@ -11,7 +13,7 @@ class PhoneBookEntry implements Comparable{
         return phoneNumber;
     }
 
-    private String phoneNumber;
+
 
     PhoneBookEntry(String name, String phoneNumber){
         this.name = name;
@@ -19,9 +21,17 @@ class PhoneBookEntry implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        PhoneBookEntry compareObject = (PhoneBookEntry) o;
-        return this.name.compareTo(compareObject.name);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        PhoneBookEntry that = (PhoneBookEntry) o;
+        if(name.equals(that.name) && phoneNumber.equals(that.phoneNumber)){
+            return true;
+        } else {return false;}
     }
 
+    @Override
+    public int hashCode() {
+        return name.hashCode() * phoneNumber.hashCode();
+    }
 }

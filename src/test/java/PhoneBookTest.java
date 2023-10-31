@@ -4,19 +4,29 @@ import org.junit.jupiter.api.Test;
 import ru.sergjavacode.PhoneBook;
 
 public class PhoneBookTest {
-    PhoneBook phoneBook=new PhoneBook();
-    @Test
-    public void addTest(){
-        Assertions.assertEquals(1,phoneBook.add("Коля","26-25-26"));
-        Assertions.assertEquals(2,phoneBook.add("Юля","56-78-99"));
-        Assertions.assertEquals(2,phoneBook.add("Коля","26-29-26"));
+    static PhoneBook phoneBook = new PhoneBook();
+
+
+    @BeforeAll
+    public static void beforeAll() {
+        Assertions.assertEquals(1, phoneBook.add("Коля", "26-25-26"));
+        Assertions.assertEquals(2, phoneBook.add("Юля", "56-78-99"));
+        Assertions.assertEquals(3, phoneBook.add("Коля", "26-29-26"));
     }
 
     @Test
-    public void findByNumberTest(){
+    public void addTest() {
+        Assertions.assertEquals(4, phoneBook.add("Толя", "56-98-26"));
+        Assertions.assertEquals(5, phoneBook.add("Таня", "98-77-39"));
+        Assertions.assertEquals(6, phoneBook.add("Толя", "55-25-32"));
+    }
+
+    @Test
+    public void findByNumberTest() {
+        System.out.println(phoneBook.findByNumber("56-78-99"));
         Assertions.assertTrue("Юля".equals(phoneBook.findByNumber("56-78-99")));
         Assertions.assertTrue("Коля".equals(phoneBook.findByNumber("26-29-26")));
-        Assertions.assertFalse("Коля".equals(phoneBook.findByNumber("26-25-26")));
+        Assertions.assertTrue("Коля".equals(phoneBook.findByNumber("26-25-26")));
     }
 
 }
