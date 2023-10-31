@@ -23,10 +23,15 @@ public class PhoneBookTest {
 
     @Test
     public void findByNumberTest() {
-        System.out.println(phoneBook.findByNumber("56-78-99"));
         Assertions.assertTrue("Юля".equals(phoneBook.findByNumber("56-78-99")));
         Assertions.assertTrue("Коля".equals(phoneBook.findByNumber("26-29-26")));
         Assertions.assertTrue("Коля".equals(phoneBook.findByNumber("26-25-26")));
     }
 
+    @Test
+    public void findByNameTest(){
+        Assertions.assertTrue("56-78-99".equals(phoneBook.findByName("Юля")));
+        Assertions.assertTrue("26-29-26".equals(phoneBook.findByName("Коля")));
+        Assertions.assertTrue("26-25-26".equals(phoneBook.findByName("Коля")));
+    }
 }
