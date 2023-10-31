@@ -4,7 +4,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class PhoneBook {
- int add(String name, String phoneNumber){
-        return 0;
+    private Set<PhoneBookEntry> PhoneBookSet = new TreeSet<>();
+
+    public int add(String name, String phoneNumber) {
+        PhoneBookSet.add(new PhoneBookEntry(name, phoneNumber));
+        return PhoneBookSet.size();
     }
 }
