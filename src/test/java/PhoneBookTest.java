@@ -18,7 +18,7 @@ public class PhoneBookTest {
     @Test
     public void addTest() {
         Assertions.assertEquals(4, phoneBook.add("Толя", "56-98-26"));
-        Assertions.assertEquals(5, phoneBook.add("Таня", "98-77-39"));
+        Assertions.assertEquals(5, phoneBook.add("Аня", "98-77-39"));
         Assertions.assertEquals(6, phoneBook.add("Тоня", "55-25-32"));
     }
 

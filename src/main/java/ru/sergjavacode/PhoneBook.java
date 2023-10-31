@@ -38,6 +38,6 @@ public class PhoneBook {
         return "Абонент с именем " + name + " не существует.\n";
     }
     public Set<PhoneBookEntry> printAllNames(){
-        return null;
+        return phoneBookSet;
     }
 }
